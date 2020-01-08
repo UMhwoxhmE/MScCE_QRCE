@@ -205,7 +205,7 @@ describe(males)
 
 #####Two independent samples t-test, both variables are numerical
 
-ttest3<-t.test(data$Entry, data$Y3mark) #this comparison doesn't make sense in reality, but we will assume they are for the purposes of demonstration
+ttest3<-t.test(data$Entry, data$Y3mark) #this comparison doesn't make sense in reality, but we will assume they are different groups for the purposes of demonstration
 ttest3
 
 correlation<-cor.test(data$Y3mark,data$Entry)
