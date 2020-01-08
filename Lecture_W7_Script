@@ -187,11 +187,11 @@ psych::alpha(Conscale, check.keys=FALSE)
 
 #####One-sample t-test
 
-ttest1<-t.test(data$Con, mu=30)
+ttest1<-t.test(data$Con, mu=30) #mu is the true mean of the sample
 ttest1
 
 
-#####Two independent samples t-test
+#####Two independent samples t-test, comparison variable is binary (e.g. Gender)
 
 ttest2<-t.test(data$Con~data$Gender)
 ttest2
@@ -203,13 +203,19 @@ describe(females)
 males<-data[which(data$Gendercat=="male"), ]
 describe(males)
 
+#####Two independent samples t-test, both variables are numerical
 
+ttest3<-t.test(data$Entry, data$Y3mark) #this comparison doesn't make sense in reality, but we will assume they are for the purposes of demonstration
+ttest3
+
+correlation<-cor.test(data$Y3mark,data$Entry)
+correlation
 
 
 #####Paired t-test
 
-ttest3<-t.test(data$Entry, data$Y3mark)
-ttest3
+ttest4<-t.test(data$Entry, data$Y3mark, paired = TRUE)
+ttest4
 
 correlation<-cor.test(data$Y3mark,data$Entry)
 correlation
