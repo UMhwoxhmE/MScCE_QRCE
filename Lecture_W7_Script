@@ -265,7 +265,7 @@ regression3<-glm(data$Warn~data$Con, family=binomial)
 summary(regression3)
 
 
-exp(cbind(OR=coef(regression3,confint(regression3))))
+exp(cbind(OR=coef(regression3,confint(regression3)[2])))
 
 
 #####Logistic Regression (multiple)
@@ -274,7 +274,7 @@ regression4<-glm(data$Warn~data$Entry+data$Con, family=binomial)
 summary(regression4)
 
 
-ORtable<-exp(cbind(OR=coef(regression4,confint(regression4))))
+ORtable<-exp(cbind(OR=coef(regression4,confint(regression4)[2])))
 ORtable
 round(ORtable[2], digits=2)
 round(ORtable[3], digits=2)
