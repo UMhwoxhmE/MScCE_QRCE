@@ -162,4 +162,4 @@ Scatterplot1
 Scatterplot2<-Scatterplot1 + geom_smooth(method="lm", se=FALSE)
 Scatterplot2
 
-
+rmarkdown::render("Lecture 4.Rmd")
